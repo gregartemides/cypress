@@ -22,6 +22,7 @@ jobs:
           name: build
           if-no-files-found: error
           path: .next/build/chunks/
+          include-hidden-files: true
 
   cypress-run:
     runs-on: ubuntu-latest
