@@ -23,8 +23,8 @@ jobs:
           npm ci
           npm run dev &
       
-      - name: Check if accessible at http://klarpay.local
-        run: curl http://klarpay.local
+      - name: Check if accessible at http://klarpay.local:3000
+        run: curl http://klarpay.local:3000
 
   #     - name: Checkout
   #       uses: actions/checkout@v4
