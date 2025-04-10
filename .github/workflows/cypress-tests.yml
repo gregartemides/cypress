@@ -9,6 +9,21 @@ jobs:
       - name: Check hosts
         run: cat /etc/hosts
 
+      - name: Add klarpay.local to hosts
+        run: echo "127.0.0.1 klarpay.local" | sudo tee -a /etc/hosts
+
+      - name: Check hosts again
+        run: cat /etc/hosts
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run the app
+        run: npm run start
+      
+      - name: Check if accessible at http://klarpay.local
+        run: curl http://klarpay.local
+
   #     - name: Checkout
   #       uses: actions/checkout@v4
 
